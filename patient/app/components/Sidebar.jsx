@@ -11,8 +11,8 @@ export function Sidebar({ collapsed }) {
   ];
 
   const bottomItems = [
-    { name: "Profile", path: "/patient/profile", icon: User },
     { name: "Settings", path: "/patient/settings", icon: Settings },
+    { name: "Back to Home", path: "/", icon: Home },
   ];
 
   return (
