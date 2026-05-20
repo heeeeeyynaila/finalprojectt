@@ -73,7 +73,7 @@ export default function AddPatient() {
 
               {/* Step Indicators */}
               <div className="field-animate flex items-center gap-3 mb-8" style={{ animationDelay: '0.12s' }}>
-                {[1, 2, 3].map((s) => (
+                {[1, 2].map((s) => (
                   <button
                     key={s}
                     type="button"
@@ -87,7 +87,7 @@ export default function AddPatient() {
                     }`}
                   >
                     {step > s ? <Check className="size-3.5" /> : <span>{s}</span>}
-                    <span className="hidden sm:inline">{s === 1 ? 'Personal' : s === 2 ? 'Clinical' : 'Insurance'}</span>
+                    <span className="hidden sm:inline">{s === 1 ? 'Personal' : 'Clinical'}</span>
                   </button>
                 ))}
               </div>
@@ -167,51 +167,6 @@ export default function AddPatient() {
                     </div>
                     <div className="field-animate flex gap-4 pt-2" style={{ animationDelay: '0.3s' }}>
                       <button type="button" onClick={() => setStep(1)}
-                        className="flex-1 bg-white/50 border border-white/60 text-[#64748b] font-bold py-5 rounded-2xl hover:bg-white/80 transition-all">
-                        ← Back
-                      </button>
-                      <button type="button" onClick={() => setStep(3)}
-                        className="flex-1 bg-gradient-to-r from-[#006591] to-[#0ea5e9] text-white font-bold py-5 rounded-2xl shadow-lg shadow-[#006591]/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
-                        Continue to Insurance →
-                      </button>
-                    </div>
-                  </>
-                )}
-
-                {step === 3 && (
-                  <>
-                    <div className="field-animate grid grid-cols-1 md:grid-cols-2 gap-6" style={{ animationDelay: '0.15s' }}>
-                      <div className="space-y-2">
-                        <label className={labelClass}>Insurance Provider</label>
-                        <input type="text" placeholder="e.g. BlueCross, Cigna" className={inputClass} />
-                      </div>
-                      <div className="space-y-2">
-                        <label className={labelClass}>Policy Number</label>
-                        <input type="text" placeholder="POL-XXX-YYYY" className={inputClass} />
-                      </div>
-                    </div>
-                    <div className="field-animate space-y-2" style={{ animationDelay: '0.2s' }}>
-                      <label className={labelClass}>Emergency Contact Name</label>
-                      <input type="text" placeholder="Full name of contact" className={inputClass} />
-                    </div>
-                    <div className="field-animate grid grid-cols-1 md:grid-cols-2 gap-6" style={{ animationDelay: '0.25s' }}>
-                      <div className="space-y-2">
-                        <label className={labelClass}>Emergency Phone</label>
-                        <input type="tel" placeholder="+212 600 000 000" className={inputClass} />
-                      </div>
-                      <div className="space-y-2">
-                        <label className={labelClass}>Relationship</label>
-                        <select className={inputClass}>
-                          <option>Spouse</option>
-                          <option>Parent</option>
-                          <option>Child</option>
-                          <option>Sibling</option>
-                          <option>Other</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="field-animate flex gap-4 pt-2" style={{ animationDelay: '0.3s' }}>
-                      <button type="button" onClick={() => setStep(2)}
                         className="flex-1 bg-white/50 border border-white/60 text-[#64748b] font-bold py-5 rounded-2xl hover:bg-white/80 transition-all">
                         ← Back
                       </button>
